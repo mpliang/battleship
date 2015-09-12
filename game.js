@@ -1,11 +1,13 @@
+
+
 $(document).ready(init);
 
 function init() {
   //create table dynamically later and reset new game
 
-  var gameState = 'on';
+  // var gameState = 'on';
   //place pieces
-  
+
 
 }
 
