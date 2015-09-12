@@ -1,28 +1,10 @@
-
-
 $(document).ready(init);
 
-function init() {
-  //create table dynamically later and reset new game
-
-  // var gameState = 'on';
-  //place pieces
-
-
-}
-
-function goClick(){
-  $(this).
+function init(){
+  $('#playerBoard td').on('click', goClick);
 }
 
 
-
-
-
-function gameOn(gameState){
-  if (gameState){
-    return true;
-  } else {
-    return false;
-  }
+function goClick(e){
+  console.log($(this).data('id'));
 }

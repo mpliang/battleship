@@ -1,5 +1,5 @@
 body {
-  background-color: #79705a;
+  background-color: rgba(24, 113, 195, 0.52);
   display: inline-block;
   text-align: center;
 }
@@ -19,4 +19,12 @@ td {
 
 .ship {
   background-color: black;
+}
+
+.hit {
+  background-color: red;
+}
+
+.miss {
+  background-color: white;
 }
