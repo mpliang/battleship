@@ -3,17 +3,16 @@ body {
   display: inline-block;
   text-align: center;
 }
-​
 #gameArea{
   display: center-block;
   margin: 5em;
 }
-​
+
 table {
   border-collapse: collapse;
 }
-​
+
 td {
-  border: 1px solid grey;
+  border: 1px solid grey !important;
   height: 30px;
 }
