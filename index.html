@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Battleship</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<body>
-    <h1>Battleship</h1>
-      <p>Using Firebase</p>
-
-
-  <div id="gameArea">
-    <div id="playerBoard">
-      <table>
+<body class="fa">
+​
+​
+  <div id="gameArea" class="row col-lg-12 text-center">
+      <h1 class="text-center">Battleship</h1> <h6 class="text-center">by Mike L. & Samantha, the bestest.</h6>
+    <div id="myShips" class="col-lg-5">
+      <h3 class="text-center">Plot <strong>Your</strong> Ships</h3>
+      <table id="playerBoard" class= "table">
         <tr class="row">
           <td class="col"></td>
           <td class="col"></td>
@@ -135,16 +138,140 @@
         </tr>
       </table>
     </div>
-
-    <div id="oppBoard">
+    <div id="myShips" class="col-lg-2">
+      <h2 class="text-center">Stats</h2>
+    </div>
+    <div class="inline col-lg-5" id="oppBoard">
+      <h4>Target Your <strong>Opponent's</strong> Ships</h4>
+      <table id="oppBoard" class= "table">
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+        <tr class="row">
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+          <td class="col"></td>
+        </tr>
+      </table>
     </div>
   </div>
-
-
-
-
-
+​
+​
+​
+​
+  <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="jquery.min.js"></script>
-  <script src="ttt.js"></script>
 </body>
 </html>

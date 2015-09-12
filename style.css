@@ -1,30 +1,19 @@
 body {
-  background-color: grey;
+  background-color: #79705a;
   display: inline-block;
   text-align: center;
 }
-
+​
 #gameArea{
-  width: 70%;
-  margin: 50px auto;
-  border:2px solid black;
+  display: center-block;
+  margin: 5em;
 }
+​
 table {
   border-collapse: collapse;
-  width: 400px;
-  height: 400px;
 }
+​
 td {
-  border: 1px solid blue;
-}
-#playerBoard {
-  height: 400px;
-  width: 400px;
-  border: 1px solid orange;
-}
-
-#oppBoard {
-  height: 400px;
-  width: 400px;
-  border: 1px solid purple;
+  border: 1px solid grey;
+  height: 30px;
 }
