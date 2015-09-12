@@ -8,7 +8,7 @@ $(document).ready(init);
 
 function init(){
 
-//abcdefghij
+//implement a way to push locations?
   var myShips1 = [
       {name: "Carrier", length: 5, sunk: false, location: ['D2','D3','D4','D5','D6'], hits: 0},
       {name: "Battleship", length: 4, sunk: false, location: ['G8','H8','I8','J8'], hits: 0},
@@ -50,6 +50,7 @@ function init(){
           if (event.target.id === val){
             console.log('hit');
             element.className += " hit";
+
           } else {
             console.log('miss');
             element.className += " miss";
@@ -66,10 +67,14 @@ function init(){
 
 
 function start(){
+  fb.child('players').on('value', function(snapshot){
+    console.log(snapshot.numChildren());
+    if (snapshot.numChildren() === 2) {
+      alert('Begin Battleship!')
+      gameStart();
+    }
 
-  if (players === 1) {
-    alert('Begin Battleship!')
-  }
+  })
   console.log('start');
 
 
@@ -81,9 +86,13 @@ function start(){
     var changedPost = snapshot.val();
     console.log(snapshot.val());
     // console.log("The updated post title is " + changedPost.title);
-    players++;
+    // players++;
     console.log(players);
   });
+
+}
+
+function gameStart(){
 
 }
 
