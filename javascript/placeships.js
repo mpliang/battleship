@@ -32,6 +32,7 @@ function buildShip(val) {
   var i = 0;
   while (i<val.length){
     $('#playerBoard td').on('click', function(e){
+      console.log('clicked');
       $(this).addClass('ship');
       i++;
     });
