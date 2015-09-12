@@ -28,9 +28,8 @@ function init(){
 
 function buildShip(val) {
   console.log(val.length);
-  console.log(val.name);
   var i = 0;
-  while (i<val.length){
+  if (i<val.length){
     $('#playerBoard td').on('click', function(e){
       console.log('clicked');
       $(this).addClass('ship');
