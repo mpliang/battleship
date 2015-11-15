@@ -1,34 +1,41 @@
-var fb = new Firebase("https://mikeandsammie.firebaseio.com/");
-var player1 = new Firebase("https://mikeandsammie.firebaseio.com/player1");
-var player2 = new Firebase("https://mikeandsammie.firebaseio.com/player2");
-
-var players = 0;
 
 $(document).ready(init);
 
 function init(){
 
+var fb = new Firebase("https://mikeandsammie.firebaseio.com/");
 //implement a way to push locations?
+
+  fb.remove();
+  $('#join').click(function(){
+    fb.once('value', function(dataSnapshot){
+      fb.child("Gamestatus").set('inplay');
+      player = dataSnapshot.val() === null ? 'Player1' : 'Player2';
+
+      console.log(player);
+      $('#join').hide();
+      startGame(fb,player);
+    });
+  });
+
   var myShips1 = [
-      {name: "Carrier", length: 5, sunk: false, location: ['D2','D3','D4','D5','D6'], hits: 0},
-      {name: "Battleship", length: 4, sunk: false, location: ['G8','H8','I8','J8'], hits: 0},
-      {name: "Cruiser", length: 3, sunk: false, location: ['A3','A4','A5'], hits: 0},
-      {name: "Submarine", length: 3, sunk: false, location: ['F4','G4','H4'], hits: 0},
-      {name: "Destroyer", length: 2, sunk: false, location: ['I10','J10'], hits: 0}
+      {name: "Carrier", length: 5, sunk: false, location: [], hits: 0},
+      {name: "Battleship", length: 4, sunk: false, location: [], hits: 0},
+      {name: "Cruiser", length: 3, sunk: false, location: [], hits: 0},
+      {name: "Submarine", length: 3, sunk: false, location: [], hits: 0},
+      {name: "Destroyer", length: 2, sunk: false, location: [], hits: 0}
   ];
   var myShips2 = [
-      {name: "Carrier", length: 5, sunk: false, location: ['D2','D3','D4','D5','D6'], hits: 0},
-      {name: "Battleship", length: 4, sunk: false, location: ['G8','H8','I8','J8'], hits: 0},
-      {name: "Cruiser", length: 3, sunk: false, location: ['A3','A4','A5'], hits: 0},
-      {name: "Submarine", length: 3, sunk: false, location: ['F2','F3','F4'], hits: 0},
-      {name: "Destroyer", length: 2, sunk: false, location: ['J9','J10'], hits: 0}
+      {name: "Carrier", length: 5, sunk: false, location: [], hits: 0},
+      {name: "Battleship", length: 4, sunk: false, location: [], hits: 0},
+      {name: "Cruiser", length: 3, sunk: false, location: [], hits: 0},
+      {name: "Submarine", length: 3, sunk: false, location: [], hits: 0},
+      {name: "Destroyer", length: 2, sunk: false, location: [], hits: 0}
   ];
 
   var clicked = [];
-  player1.set(myShips1);
-  player2.set(myShips2);
 
-  $('#join').on('click', start);
+  // $('#join').on('click', start);
 
   //displays ships on players board
   for (var i=0; i< myShips1.length; i++){
@@ -66,36 +73,42 @@ function init(){
 }
 
 
-function start(){
-  fb.child('players').on('value', function(snapshot){
-    console.log(snapshot.numChildren());
-    if (snapshot.numChildren() === 2) {
-      alert('Begin Battleship!')
-      gameStart();
-    }
+function startGame(fb, player){
 
-  })
   console.log('start');
 
+//place ships
+  var ships = 0;
+  var locations = [];
+  fb.child(player).child('locations').set([]);
 
-  fb.child('players').push({
-    players: 'players'
+  if (ships < 10) {
+    $("#playerBoard td").on("click", function(){
+      $(this).addClass('ship');
+      locations.push($(this).attr('id'));
+      console.log(locations);
+      console.log(ships);
+      fb.child(player).child('locations').push($(this).attr('id'));
+      ships++;
   });
+  }
+  if (ships === 10) {
+}
+
+  //
+  // fb.child('players').push({
+  //   players: 'players'
+  // });
 
   fb.on("child_changed", function(snapshot) {
     var changedPost = snapshot.val();
     console.log(snapshot.val());
     // console.log("The updated post title is " + changedPost.title);
     // players++;
-    console.log(players);
+    // console.log(players);
   });
 
 }
-
-function gameStart(){
-
-}
-
 
 
 
